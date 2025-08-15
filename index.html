@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RefurCAFE - Premium Pre-Owned Phones</title>
+<title>refurbsell - Premium Pre-Owned Phones</title>
 <style>
     body {
         margin: 0;
@@ -108,7 +108,7 @@
 <body>
 
 <header>
-    <h1>RefurbishX</h1>
+    <h1>Refurbsell</h1>
     <nav>
         <a href="#">Home</a>
         <a href="#">Shop</a>
@@ -123,7 +123,133 @@
     <button>Shop Now</button>
 </section>
 
-<section class="products">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refurbsell</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+    }
+    header {
+        background: linear-gradient(120deg, #1a73e8, #34a853);
+        padding: 1rem;
+        color: white;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .main-section, .brand-section {
+        padding: 1rem;
+        transition: all 0.3s ease;
+    }
+    .btn {
+        display: inline-block;
+        background: #1a73e8;
+        color: white;
+        padding: 0.7rem 1.2rem;
+        border-radius: 25px;
+        text-decoration: none;
+        cursor: pointer;
+        margin-top: 1rem;
+    }
+    .btn:hover {
+        background: #0f5ccd;
+    }
+    .categories {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    .category {
+        background: white;
+        border-radius: 15px;
+        padding: 1rem;
+        text-align: center;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        transition: transform 0.2s ease;
+    }
+    .category:hover {
+        transform: translateY(-5px);
+    }
+    .brands {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    .brand {
+        background: white;
+        padding: 0.8rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        cursor: pointer;
+    }
+    .hidden {
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<header>Refurbsell</header>
+
+<!-- Main Categories -->
+<div class="main-section" id="mainSection">
+    <h2>Shop by Category</h2>
+    <div class="categories">
+        <div class="category" onclick="showBrands('phones')">📱 Phones</div>
+        <div class="category" onclick="showBrands('chargers')">🔌 Chargers</div>
+        <div class="category" onclick="showBrands('earphones')">🎧 Earphones</div>
+    </div>
+</div>
+
+<!-- Brand Section -->
+<div class="brand-section hidden" id="brandSection">
+    <h2 id="brandTitle"></h2>
+    <div class="brands" id="brandList"></div>
+    <a class="btn" onclick="goBack()">⬅ Back</a>
+</div>
+
+<script>
+    const brandData = {
+        phones: ["Apple", "Samsung", "OnePlus", "Xiaomi", "Realme", "nothing", "oppo", "vivo"],
+        chargers: ["Anker", "Apple", "Samsung", "Mi", "Boat"],
+        earphones: ["Boat", "Sony", "JBL", "Apple AirPods", "OnePlus Buds", "samsung", "bault"],
+    };
+
+    function showBrands(category) {
+        document.getElementById("mainSection").classList.add("hidden");
+        document.getElementById("brandSection").classList.remove("hidden");
+        
+        document.getElementById("brandTitle").innerText = "Select " + category.charAt(0).toUpperCase() + category.slice(1) + " Brand";
+        
+        const brandList = document.getElementById("brandList");
+        brandList.innerHTML = "";
+        
+        brandData[category].forEach(brand => {
+            const div = document.createElement("div");
+            div.className = "brand";
+            div.innerText = brand;
+            brandList.appendChild(div);
+        });
+    }
+
+    function goBack() {
+        document.getElementById("brandSection").classList.add("hidden");
+        document.getElementById("mainSection").classList.remove("hidden");
+    }
+</script>
+
+</body>
+</html><section class="products">
     <div class="product">
         <img src="https://via.placeholder.com/300x200?text=iPhone+13" alt="iPhone 13">
         <div class="product-details">
@@ -151,7 +277,7 @@
 </section>
 
 <footer>
-    ©️ 2025 RefurbishX | Built with 💚 for tech lovers
+    ©️ 202 refurbsell | Built with 💚 
 </footer>
 
 </body>
